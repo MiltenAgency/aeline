@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #131313;
+  --color-ink-soft: #2f2f2f;
+  --color-paper: #ffffff;
+  --color-mist: #f2f2f2;
+  --color-lime: #2ef8a0;
+  --color-lime-deep: #10b981;
+  --color-fog: #7b7b7b;
+  --color-ink-60: rgb(19 19 19 / 0.6);
+  --color-white-70: rgb(255 255 255 / 0.8);
+  --color-line: rgb(19 19 19 / 0.08);
+
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", sans-serif;
+  --font-body: var(--font-jakarta), "Plus Jakarta Sans", sans-serif;
+  --font-mono: var(--font-geist-mono), "Geist Mono", monospace;
+
+  --radius-card: 1.25rem;
+  --radius-panel: 1.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-sans);
+  letter-spacing: -0.06em;
+  font-weight: 500;
+}
+
+@keyframes ring-spin {
+  from {
+    transform: rotateX(15deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(15deg) rotateY(-360deg);
+  }
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+::selection {
+  background-color: var(--color-lime);
+  color: var(--color-ink);
+}
