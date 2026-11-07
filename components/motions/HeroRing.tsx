@@ -9,14 +9,14 @@ export interface HeroRingProps {
   cardHeight?: number;
 }
 
-// Self-contained 3D rotating ring of coded UI cards
+// Self-contained 3D rotating ring of precision telemetry cards
 export function HeroRing({
   cards = mockCards,
   radius = 490,
-  rotateX = 10,
-  translateY = 60,
-  cardWidth = 110,
-  cardHeight = 110,
+  rotateX = 0,
+  translateY = 0,
+  cardWidth = 120,
+  cardHeight = 120,
 }: HeroRingProps) {
   const slots = [...cards, ...cards, ...cards];
   const n = slots.length;
@@ -29,25 +29,23 @@ export function HeroRing({
           to { transform: rotateX(${rotateX}deg) rotateY(-360deg); }
         }
         .animate-ring-spin {
-          animation: ring-spin-motion 40s linear infinite;
+          animation: ring-spin-motion 45s linear infinite;
         }
       `}</style>
 
-      {/* translateY pushes the whole 3D scene downward visually so near-side
-          cards that project upward (due to rotateX tilt) land below the text,
-          without any overflow clipping altering the card sizes */}
+      {/* Perfectly centered 3D perspective scene */}
       <div
-        className="h-40 w-full"
+        className="h-[120px] w-full"
         style={{ perspective: "1800px", transform: `translateY(${translateY}px)` }}
       >
         <div
-          className="relative mx-auto h-full w-[140px] animate-ring-spin"
+          className="relative mx-auto h-[120px] w-[120px] animate-ring-spin"
           style={{ transformStyle: "preserve-3d" }}
         >
           {slots.map((Card, i) => (
             <div
               key={i}
-              className="absolute inset-x-0 top-3 rounded-md shadow-[0_20px_40px_rgba(0,0,0,0.25)] overflow-hidden"
+              className="absolute left-0 top-0 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.32)] overflow-hidden pointer-events-auto"
               style={{
                 width: `${cardWidth}px`,
                 height: `${cardHeight}px`,

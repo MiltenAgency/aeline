@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Roboto_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -17,17 +17,28 @@ const geistMono = Roboto_Mono({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#10b981",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: site.title,
-    template: "%s — Aeline",
+    template: "%s — Zephyr Dynamics",
   },
   description: site.description,
   openGraph: {
     siteName: site.name,
     type: "website",
-    images: ["/assets/img/1fd4a8c085f10113.webp"],
+    images: ["/assets/img/brand-logo.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "64x64", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: "/apple-icon.png",
   },
 };
 

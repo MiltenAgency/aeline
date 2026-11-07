@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { nav } from "@/lib/content/site";
+import { Logo } from "@/components/Logo";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -29,19 +30,21 @@ export function Navbar() {
         className={`mx-auto flex max-w-[1440px] items-center justify-between rounded-2xl px-6 py-4 sm:px-10 sm:py-5 ${
           overlay
             ? ""
-            : "bg-paper/90 backdrop-blur-lg border border-line/50 shadow-sm"
+            : "bg-paper border border-line/50 shadow-sm"
         }`}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/assets/img/e71483bf6a2851df.svg"
-            alt="Aeline"
-            width={90}
-            height={30}
-            className={overlay && !open ? "brightness-0 invert" : ""}
-            priority
-          />
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center origin-center transition-transform duration-500 ease-out group-hover:rotate-180">
+            <Logo className="w-full h-full" />
+          </div>
+          <span
+            className={`font-sans text-lg sm:text-xl font-extrabold tracking-tight transition-colors ${
+              overlay && !open ? "text-white" : "text-ink"
+            }`}
+          >
+            Zephyr<span className="text-[#10b981]">.</span>
+          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -67,7 +70,7 @@ export function Navbar() {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="rounded-full bg-lime px-6 py-3 font-mono text-[13px] font-bold uppercase tracking-widest text-ink transition-all hover:scale-105 hover:shadow-md"
+            className="rounded-full bg-lime px-6 py-3 font-mono text-[13px] font-bold uppercase tracking-widest text-white transition-all hover:scale-105"
           >
             Contact us
           </Link>
@@ -124,7 +127,7 @@ export function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="mt-3 rounded-full bg-lime px-5 py-3.5 text-center font-mono text-sm font-bold uppercase tracking-widest text-ink"
+              className="mt-3 rounded-full bg-lime px-5 py-3.5 text-center font-mono text-sm font-bold uppercase tracking-widest text-white transition-opacity hover:opacity-95"
             >
               Contact us
             </Link>

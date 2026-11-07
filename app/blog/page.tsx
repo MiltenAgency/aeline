@@ -10,7 +10,7 @@ import { posts } from "@/lib/content/blog";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Exploring the latest trends in AI, consulting, and business transformation.",
+  description: "Exploring the latest research in offshore wind engineering, hydrodynamics, and subsea grid networks.",
 };
 
 export default function BlogPage() {
@@ -20,9 +20,9 @@ export default function BlogPage() {
     <>
       <section className="mx-auto max-w-[1440px] px-4 pb-12 pt-16">
         <SectionHeading
-          eyebrow="Blog and articles"
-          title="Latest insights and trends"
-          sub="Whether you’re optimizing today or building for tomorrow we help you move faster with confidence."
+          eyebrow="Technical Dossiers"
+          title="Offshore Research & Fleet Telemetry"
+          sub="Peer-reviewed engineering analyses, metocean telemetry studies, and deepwater technology briefs."
           align="left"
         />
 

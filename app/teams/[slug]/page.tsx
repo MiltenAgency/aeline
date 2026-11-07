@@ -19,7 +19,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return { title: `${member.name} — ${member.role}`, description: member.bio };
 }
 
-const socialGlyphs = ["in", "𝕏", "◎"];
+const socialGlyphs = ["in", "X", "◎"];
 
 export default function MemberPage({ params }: { params: { slug: string } }) {
   const member = getMember(params.slug);
@@ -70,7 +70,7 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
                 ))}
               </ul>
               <div className="mt-8">
-                <Button href="/contact" variant="dark">
+                <Button href="/contact" variant="primary">
                   Contact me
                 </Button>
               </div>

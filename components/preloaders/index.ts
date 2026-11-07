@@ -21,3 +21,6 @@ export { HeroExpandPreloader } from "./HeroExpandPreloader";
 
 // ─── Extracted Premium Framer Preloader ───────────────────────────────────────
 export { SplitWordImagePreloader } from "./SplitWordImagePreloader";
+
+// ─── Zephyr Dynamics Brand Preloader ──────────────────────────────────────────
+export { ZephyrPreloader } from "./ZephyrPreloader";

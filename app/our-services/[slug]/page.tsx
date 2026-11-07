@@ -33,7 +33,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             <h1 className="text-4xl sm:text-5xl">{service.name}</h1>
             <p className="mt-6 text-sm leading-relaxed text-fog sm:text-base">{service.description}</p>
             <div className="mt-8">
-              <Button href="/contact" variant="dark">
+              <Button href="/contact" variant="primary">
                 Get Started
               </Button>
             </div>

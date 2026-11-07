@@ -424,9 +424,9 @@ export default function ScratchCard(props: ScratchCardProps) {
           justifyContent: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-center">
+        <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-6 text-center">
           <span className="text-lime text-xs font-bold tracking-widest uppercase mb-1">
-            🎉 VIP REWARD UNLOCKED
+            OFFSHORE ACCESS UNLOCKED
           </span>
           <h4 className="text-white text-3xl font-extrabold tracking-tight">
             20% OFF AI CONSULTING
@@ -499,7 +499,7 @@ export default function ScratchCard(props: ScratchCardProps) {
         )}
 
         {/* Simple "Scratch me" text */}
-        <span className="text-xl font-bold tracking-tight text-amber-950 uppercase bg-amber-300/80 backdrop-blur-sm px-4 py-1 rounded-full shadow-inner border border-amber-400/50">
+        <span className="text-xl font-bold tracking-tight text-amber-950 uppercase bg-amber-300 px-4 py-1 rounded-full shadow-inner border border-amber-400/50">
           {topText}
         </span>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants, type MarginProps } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const variants: Variants = {
   hidden: { opacity: 0, y: 24 },

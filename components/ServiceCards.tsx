@@ -6,12 +6,26 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { services } from "@/lib/content/services";
 
-const icons = ["✦", "◔", "📊"];
-const cardTags = ["FEATURED SOLUTION", "STRATEGIC GROWTH", "ANALYTICS POWER"];
+const serviceIcons = [
+  // Wind Platform / Rotor Icon
+  <svg key="0" className="h-4 w-4 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="3" />
+    <path d="M12 2v7M12 15v7M2 12h7M15 12h7" />
+  </svg>,
+  // Wave / Marine Icon
+  <svg key="1" className="h-4 w-4 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 12c3-3 6-3 10 0s7 3 10 0M2 17c3-3 6-3 10 0s7 3 10 0" />
+  </svg>,
+  // Grid Telemetry Icon
+  <svg key="2" className="h-4 w-4 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 20V10M12 20V4M6 20v-6" />
+  </svg>,
+];
+const cardTags = ["18.5 MW PLATFORMS", "AEROELASTIC ROTORS", "SUBSEA HVDC GRID"];
 const cardImages = [
-  "/assets/img/212a7222c003058d.webp",
-  "/assets/img/aa9b7ae88c315df8.webp",
-  "/assets/img/ae47c10680b6ab36.webp",
+  "/assets/img/offshore/service-turbine.jpg",
+  "/assets/img/offshore/service-blade.jpg",
+  "/assets/img/offshore/service-subsea.jpg",
 ];
 
 const cardRevealVariants = {
@@ -61,10 +75,10 @@ export function ServiceCards() {
                 <div className="flex flex-1 flex-col justify-between h-full min-w-0">
                   <div>
                     <span
-                      className="flex h-9 w-9 items-center justify-center rounded-lg bg-lime text-sm text-ink font-bold shadow-sm"
+                      className="flex h-9 w-9 items-center justify-center rounded-lg bg-lime text-white shadow-sm"
                       aria-hidden
                     >
-                      {icons[index]}
+                      {serviceIcons[index]}
                     </span>
                     <h3 className="mt-6 font-sans text-2xl font-medium tracking-[-0.04em] text-ink lg:text-3xl transition-colors duration-300 group-hover:text-ink/80">
                       {service.name}
@@ -75,8 +89,10 @@ export function ServiceCards() {
                   </div>
 
                   <div className="mt-8 flex items-center gap-3 pt-4 border-t border-line/60">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-mist text-xs text-ink transition-all duration-300 group-hover:scale-110 group-hover:bg-lime">
-                      ▲
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-mist text-ink transition-all duration-300 group-hover:scale-110 group-hover:bg-lime group-hover:text-white">
+                      <svg className="h-3.5 w-3.5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
                     </span>
                     <span className="text-xs font-mono font-semibold uppercase tracking-wider text-fog">
                       {cardTags[index]}

@@ -43,13 +43,11 @@ export function SlideReveal({
       opacity: 0,
       x: offset.x,
       y: offset.y,
-      filter: blur ? "blur(8px)" : "blur(0px)",
     },
     visible: {
       opacity: 1,
       x: 0,
       y: 0,
-      filter: "blur(0px)",
       transition: {
         duration,
         delay,

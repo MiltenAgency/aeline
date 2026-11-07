@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 interface LiquidWavePreloaderProps {
   onComplete?: () => void;
@@ -23,13 +23,13 @@ export function LiquidWavePreloader({
     return () => clearTimeout(timer);
   }, [duration, onComplete]);
 
-  const curveVariants = {
+  const curveVariants: Variants = {
     initial: {
       d: "M0 0 L100 0 L100 100 Q50 100 0 100 Z",
     },
     exit: {
       d: "M0 0 L100 0 L100 0 Q50 0 0 0 Z",
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] },
     },
   };
 

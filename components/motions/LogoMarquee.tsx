@@ -1,15 +1,23 @@
-const defaultLogos = ["✳", "❋", "✦", "◈", "❖", "✺", "◉"];
+import Image from "next/image";
+
+const partnerBrands = [
+  { name: "Vestas", src: "/assets/logos/vestas.svg", height: 26 },
+  { name: "Ørsted", src: "/assets/logos/orsted.svg", height: 28 },
+  { name: "Siemens Gamesa", src: "/assets/logos/siemens-gamesa.svg", height: 26 },
+  { name: "GE Vernova", src: "/assets/logos/ge-vernova.svg", height: 26 },
+  { name: "Equinor", src: "/assets/logos/equinor.svg", height: 28 },
+  { name: "Iberdrola", src: "/assets/logos/iberdrola.svg", height: 26 },
+  { name: "RWE", src: "/assets/logos/rwe.svg", height: 26 },
+];
 
 export function LogoMarquee({
-  logos = defaultLogos,
-  speed = 80,
+  speed = 40,
 }: {
-  logos?: string[];
   speed?: number;
 }) {
-  const row = [...logos, ...logos, ...logos];
+  const row = [...partnerBrands, ...partnerBrands, ...partnerBrands];
   return (
-    <div className="overflow-hidden py-14" aria-hidden>
+    <div className="overflow-hidden py-10 border-y border-line/30 bg-transparent select-none" aria-hidden>
       <style>{`
         @keyframes marquee-logo-motion {
           from { transform: translateX(0); }
@@ -19,12 +27,20 @@ export function LogoMarquee({
           animation: marquee-logo-motion ${speed}s linear infinite;
         }
       `}</style>
-      <div className="flex w-max animate-logo-marquee items-center gap-24">
-        {row.map((glyph, i) => (
-          <span key={i} className="flex items-center gap-3 whitespace-nowrap text-ink/70 transition-opacity">
-            <span className="text-xl leading-none">{glyph}</span>
-            <span className="font-sans text-2xl font-bold tracking-[-0.04em]">Logoipsum</span>
-          </span>
+      <div className="flex w-max animate-logo-marquee items-center gap-16 sm:gap-24">
+        {row.map((item, i) => (
+          <div
+            key={i}
+            className="flex items-center justify-center h-10 min-w-[120px] transition-opacity duration-300 opacity-70 hover:opacity-100"
+          >
+            <Image
+              src={item.src}
+              alt={item.name}
+              width={140}
+              height={item.height}
+              className="h-7 sm:h-8 w-auto max-w-[140px] object-contain brightness-90 hover:brightness-100 transition"
+            />
+          </div>
         ))}
       </div>
     </div>

@@ -1,10 +1,10 @@
 export const site = {
-  name: "Aeline",
-  title: "Aeline — AI & Strategy Consulting",
+  name: "Zephyr Dynamics",
+  title: "Zephyr Dynamics — Offshore Wind Turbine Engineering & Clean Power",
   description:
-    "Aeline is a flexible consulting and AI template designed to present expertise, intelligent solutions, and strategy with a clean, modern approach.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://aeline.example.com",
-  copyright: "© 2025 Ailine Inc. All rights reserved.",
+    "Zephyr Dynamics designs next-generation industrial offshore wind turbines, aerodynamic composite blades, and deepwater subsea grid platforms.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://zephyrdynamics.example.com",
+  copyright: "© 2026 Zephyr Dynamics Inc. All rights reserved.",
 };
 
 export const nav = [
@@ -25,45 +25,41 @@ export const footerLinks = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-
-
 export const contactInfo = {
-  email: "consulting@aeline.com",
-  phone: "+1 (123) 456-7890",
-  office: "456 Business Ave, New York",
+  email: "engineering@zephyrdynamics.com",
+  phone: "+1 (800) 412-WIND",
+  office: "800 Harborside Marine Way, Boston, MA",
   officeMapUrl: "https://maps.app.goo.gl/fypBBWRAtpepS5vT8",
   socials: [
-    { label: "Instagram", href: "https://www.instagram.com/" },
-    { label: "Facebook", href: "https://www.facebook.com/" },
     { label: "LinkedIn", href: "https://www.linkedin.com/" },
     { label: "X", href: "https://x.com/" },
+    { label: "GitHub", href: "https://github.com/" },
   ],
 };
 
 export const cta = {
-  eyebrow: "Trusted over 5,000+",
-  heading: "We combine human insight with artificial intelligence",
-  body: "Our consulting team bridges strategic thinking and advanced AI technologies to help companies streamline processes, improve decision-making, and create intelligent digital experiences.",
+  eyebrow: "Over 4.8 GW Deployed Globally",
+  heading: "We harness kinetic ocean gales to power clean grids worldwide",
+  body: "Our multidisciplinary naval architecture and aerodynamic engineering teams pioneer high-capacity 18.5 MW offshore turbines and subsea HVDC transmission networks built to withstand extreme oceanic environments.",
   avatars: [
     "/assets/img/b1cfccfca49b66c1.webp",
     "/assets/img/10b6f6de9a14f864.webp",
     "/assets/img/032d505a6086ee19.webp",
     "/assets/img/e7029c64832e9412.webp",
   ],
-
-  background: "/assets/img/9f968bcba56c4f04.webp",
+  background: "/assets/img/light/turbines-arc.jpg",
 };
 
 export const footerBlurb =
-  "Easily adapt to changes and scale your operations with our flexible infrastructure, designed to support your business growth.";
+  "Empowering utility grids and coastal nations with utility-scale offshore wind platforms engineered for 30+ year lifecycle resilience in harsh marine environments.";
 
 export const marqueeWords = [
-  "Professional",
-  "Grow Faster",
-  "Strategic",
-  "Build Smart",
-  "AI-Focused",
-  "Simple",
-  "Startup Feel",
-  "Smarter",
+  "Offshore Arrays",
+  "18.5 MW Nacelles",
+  "Aerodynamic Blades",
+  "Subsea HVDC",
+  "Kinetic Power",
+  "Zero Emission",
+  "Deepwater Floaters",
+  "Clean Energy",
 ];

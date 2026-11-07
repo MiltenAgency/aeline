@@ -127,7 +127,7 @@ export default function ShowcasePage() {
         {activePreloaderId && ActivePreloaderComp && (
           <div key={activePreloaderId} className="relative z-999999">
             {/* Top Dismiss Control Bar */}
-            <div className="fixed top-6 left-1/2 -translate-x-1/2 z-1000000 flex items-center gap-4 bg-black/80 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-full shadow-2xl">
+            <div className="fixed top-6 left-1/2 -translate-x-1/2 z-1000000 flex items-center gap-4 bg-black/95 border border-white/20 px-6 py-3 rounded-full shadow-2xl">
               <span className="flex h-2.5 w-2.5 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-lime"></span>
@@ -157,7 +157,7 @@ export default function ShowcasePage() {
       )}
 
       {/* ── Header Bar ──────────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 bg-[#0d0e12]/90 backdrop-blur-xl border-b border-white/10 px-6 py-4">
+      <header className="sticky top-0 z-50 bg-[#0d0e12] border-b border-white/10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <Link href="/" className="group flex items-center gap-3">
@@ -198,9 +198,12 @@ export default function ShowcasePage() {
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white text-xs"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white"
                 >
-                  ✕
+                  <svg className="h-3 w-3 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
                 </button>
               )}
             </div>
@@ -589,7 +592,7 @@ export default function ShowcasePage() {
                     onClick={triggerConfetti}
                     className="px-6 py-2.5 rounded-full bg-lime text-black font-mono font-bold text-xs hover:scale-105 active:scale-95 transition"
                   >
-                    🎉 Fire Confetti Burst
+                    Fire Confetti Burst
                   </button>
                 </div>
               </div>
@@ -644,10 +647,10 @@ export default function ShowcasePage() {
                 <div className="h-32 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
                   <Dock
                     items={[
-                      { icon: "⚡", label: "Fast" },
-                      { icon: "🎨", label: "Design" },
-                      { icon: "🚀", label: "Launch" },
-                      { icon: "💎", label: "Premium" },
+                      { icon: "Z", label: "Zephyr" },
+                      { icon: "W", label: "Wind" },
+                      { icon: "G", label: "Grid" },
+                      { icon: "P", label: "Platform" },
                     ]}
                   />
                 </div>

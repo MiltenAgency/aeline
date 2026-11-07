@@ -73,7 +73,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             sub="Whether you’re optimizing today or building for tomorrow we help you move faster with confidence."
             align="left"
           />
-          <Button href="/blog" variant="dark">
+          <Button href="/blog" variant="primary">
             View All
           </Button>
         </div>

@@ -35,12 +35,10 @@ export function WordByWordBlur({
   const wordVariants: Variants = {
     hidden: {
       opacity: 0,
-      filter: "blur(10px)",
       y: 12,
     },
     visible: {
       opacity: 1,
-      filter: "blur(0px)",
       y: 0,
       transition: {
         duration,
@@ -51,7 +49,7 @@ export function WordByWordBlur({
 
   return (
     <motion.span
-      className={`inline-flex flex-wrap gap-x-[0.25em] ${className}`}
+      className={`inline-flex flex-wrap justify-center gap-x-[0.25em] text-center ${className}`}
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export function AnimatedSubscribeButton({
   subscribeText = "Subscribe",
-  subscribedText = "Subscribed ✓",
+  subscribedText = "Subscribed",
   className = "",
 }: {
   subscribeText?: string;

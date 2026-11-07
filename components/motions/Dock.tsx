@@ -11,7 +11,7 @@ export function Dock({
 }) {
   return (
     <div
-      className={`flex h-16 items-end gap-4 rounded-2xl bg-black/40 px-4 pb-3 backdrop-blur-md border border-white/10 ${className}`}
+      className={`flex h-16 items-end gap-4 rounded-2xl bg-black/60 px-4 pb-3 border border-white/10 ${className}`}
     >
       {items.map((item, idx) => (
         <motion.button

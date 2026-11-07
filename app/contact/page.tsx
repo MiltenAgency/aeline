@@ -13,7 +13,7 @@ const socialGlyphs: Record<string, string> = {
   Instagram: "◎",
   Facebook: "ⓕ",
   LinkedIn: "in",
-  X: "𝕏",
+  X: "X",
 };
 
 export default function ContactPage() {
@@ -22,9 +22,9 @@ export default function ContactPage() {
       <Reveal className="h-full">
         <div className="flex h-full flex-col justify-between gap-16 rounded-panel bg-mist p-8 sm:p-10">
           <div>
-            <h1 className="text-4xl sm:text-5xl">Reach out today</h1>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-fog">
-              Learn about our journey, mission, and the team driving innovation.
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-ink">Reach Out Today</h1>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-fog">
+              Connect with our naval architecture and marine engineering leads to evaluate FEED packages, LiDAR metocean feasibility, or turnkey EPC platform integration.
             </p>
           </div>
 

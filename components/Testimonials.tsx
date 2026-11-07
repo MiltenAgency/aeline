@@ -8,9 +8,9 @@ export function Testimonials() {
   return (
     <section className="mx-auto max-w-[1440px] px-4 py-24">
       <SectionHeading
-        eyebrow="Testimonials"
-        title="What they say about us?"
-        sub="Here’s what they shared about their experience working with our team."
+        eyebrow="Client Endorsements"
+        title="Trusted by Global Utility Energy Leaders"
+        sub="See what offshore consortiums and marine grid operators say about partnering with Zephyr Dynamics."
         align="left"
       />
       <Reveal className="mt-6">

@@ -14,7 +14,7 @@ export function HeroCarousel({ cards = mockCards }: { cards?: React.ComponentTyp
           animation: marquee-motion 30s linear infinite;
         }
       `}</style>
-      <div className="flex w-max animate-marquee-motion items-stretch gap-2">
+      <div className="flex w-max animate-marquee-motion items-stretch gap-4">
         {row.map((Card, i) => (
           <div key={i} className="h-36 w-40 shrink-0 drop-shadow-xl">
             <Card />

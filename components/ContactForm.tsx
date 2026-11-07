@@ -58,7 +58,7 @@ export function ContactForm() {
       >
         Submit
         <span
-          className="flex h-7 w-7 items-center justify-center rounded-full bg-lime text-sm text-ink transition-transform group-hover:rotate-45"
+          className="flex h-7 w-7 items-center justify-center rounded-full bg-lime text-sm text-white transition-transform group-hover:rotate-45"
           aria-hidden
         >
           ↗

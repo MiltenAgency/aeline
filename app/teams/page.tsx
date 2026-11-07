@@ -6,7 +6,7 @@ import { team } from "@/lib/content/team";
 
 export const metadata: Metadata = {
   title: "Team",
-  description: "The minds behind Ailine's vision and execution.",
+  description: "The naval architects, aerodynamicists, and marine engineers pioneering Zephyr Dynamics.",
 };
 
 export default function TeamsPage() {
@@ -14,9 +14,9 @@ export default function TeamsPage() {
     <>
       <section className="mx-auto max-w-[1440px] px-4 pb-24 pt-40">
         <SectionHeading
-          eyebrow="Team"
-          title="Meet our team"
-          sub="The minds behind Ailine's vision and execution."
+          eyebrow="Leadership"
+          title="Marine Architects & Power Engineers"
+          sub="The multidisciplinary naval architects, composite aerodynamicists, and offshore EPC leaders pioneering Zephyr Dynamics."
         />
         <div className="mt-14">
           <TeamGrid members={team} />
