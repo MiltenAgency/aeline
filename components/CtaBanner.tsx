@@ -8,16 +8,15 @@ export function CtaBanner() {
     <section className="px-3 pb-3 pt-24">
       <Reveal>
         <div className="relative overflow-hidden rounded-panel bg-[#03071e]">
-          <BorderBeam colorFrom="#34d399" colorTo="#10b981" size={300} duration={10} />
+          <BorderBeam colorFrom="#ffb366" colorTo="#ff6a00" size={300} duration={10} />
           <Image
             src={cta.background}
             alt="Offshore Wind Array"
             fill
             sizes="100vw"
-            className="object-cover opacity-60"
+            className="object-cover"
           />
-          {/* Gradient Overlay for high contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#03071e]/95 via-[#03071e]/80 to-[#03071e]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#03071e]/65 via-[#03071e]/25 to-transparent" />
           <div className="relative z-10 flex flex-col items-start gap-5 px-8 py-20 sm:px-12 sm:py-24 lg:max-w-2xl">
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider text-emerald-400 border border-white/20">

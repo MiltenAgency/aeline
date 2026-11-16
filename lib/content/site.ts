@@ -42,10 +42,10 @@ export const cta = {
   heading: "We harness kinetic ocean gales to power clean grids worldwide",
   body: "Our multidisciplinary naval architecture and aerodynamic engineering teams pioneer high-capacity 18.5 MW offshore turbines and subsea HVDC transmission networks built to withstand extreme oceanic environments.",
   avatars: [
-    "/assets/img/b1cfccfca49b66c1.webp",
-    "/assets/img/10b6f6de9a14f864.webp",
-    "/assets/img/032d505a6086ee19.webp",
-    "/assets/img/e7029c64832e9412.webp",
+    "/assets/img/team-cheyenne-portrait.png",
+    "/assets/img/team-erin-portrait.png",
+    "/assets/img/team-jaylon-portrait.png",
+    "/assets/img/team-zaire-portrait.png",
   ],
   background: "/assets/img/light/turbines-arc.jpg",
 };

@@ -17,7 +17,7 @@ export function LogoMarquee({
 }) {
   const row = [...partnerBrands, ...partnerBrands, ...partnerBrands];
   return (
-    <div className="overflow-hidden py-10 border-y border-line/30 bg-transparent select-none" aria-hidden>
+    <div className="overflow-hidden py-10 bg-transparent select-none" aria-hidden>
       <style>{`
         @keyframes marquee-logo-motion {
           from { transform: translateX(0); }

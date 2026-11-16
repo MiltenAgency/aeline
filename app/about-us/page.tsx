@@ -30,7 +30,7 @@ export default function AboutPage() {
         <div className="grid items-end gap-10 lg:grid-cols-[1.4fr_1fr]">
           <Reveal>
             <div className="flex items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider text-lime border border-emerald-200/60">
+              <span className="inline-flex items-center gap-2 rounded-full bg-lime/10 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider text-lime border border-lime/20">
                 <span className="h-1.5 w-1.5 rounded-full bg-lime animate-pulse" />
                 Over 4.8 GW Deployed Globally
               </span>
