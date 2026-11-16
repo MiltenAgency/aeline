@@ -11,7 +11,7 @@ export const plans: Plan[] = [
   {
     name: "Pre-Feasibility Study",
     description: "Comprehensive offshore wind site characterization, floating LiDAR metocean telemetry, and CAPEX/OPEX modeling.",
-    price: "$45,000.00",
+    price: "$25,000",
     period: "/study",
     features: [
       "Floating LiDAR & satellite metocean telemetry",
@@ -23,7 +23,7 @@ export const plans: Plan[] = [
   {
     name: "FEED & Array Design",
     description: "Full Front-End Engineering Design including turbine micro-siting, wake loss CFD, and subsea cable routing.",
-    price: "$180,000.00",
+    price: "$100,000",
     period: "/array",
     features: [
       "3D CFD wake loss & turbulence array modeling",
