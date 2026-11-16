@@ -62,14 +62,13 @@ export default function HomePage() {
               unoptimized
               className="object-cover"
             />
-            {/* High-contrast gradient vignette providing crystal-clear legibility for white text while keeping the sunny landscape vibrant */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#020b1a]/45 via-transparent to-[#020b1a]/55" />
+            <div className="absolute inset-0 bg-gradient-to-b from-sky-200/20 via-transparent to-lime-100/15" />
           </div>
 
           <div className="relative z-20 flex flex-col items-center justify-center px-6 pt-14 sm:pt-16 max-w-4xl mx-auto my-auto text-center -translate-y-4 sm:-translate-y-6">
             {/* The Centered Slogan */}
             <Reveal delay={0.05} className="w-full flex justify-center text-center">
-              <h1 className="w-full max-w-4xl mx-auto text-3xl text-white font-extrabold tracking-tight sm:text-5xl lg:text-[3.75rem] lg:leading-[1.12] text-center flex justify-center drop-shadow-[0_2px_14px_rgba(0,0,0,0.7)]">
+              <h1 className="w-full max-w-4xl mx-auto text-3xl text-white font-extrabold tracking-tight sm:text-5xl lg:text-[3.75rem] lg:leading-[1.12] text-center flex justify-center">
                 <WordByWordBlur
                   text="Engineering the Next Generation of Ocean Wind"
                   className="justify-center text-center w-full"
@@ -79,7 +78,7 @@ export default function HomePage() {
 
             {/* Centered Subtitle */}
             <Reveal delay={0.12} className="w-full flex justify-center text-center">
-              <p className="mt-4 max-w-lg mx-auto text-center text-sm leading-relaxed tracking-[-0.01em] text-white font-medium sm:text-base drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
+              <p className="mt-4 max-w-lg mx-auto text-center text-sm leading-relaxed tracking-[-0.01em] text-white font-medium sm:text-base">
                 Pioneering 18.5 MW direct-drive turbine platforms, carbon aeroelastic composite blades, and deepwater subsea HVDC grid infrastructure.
               </p>
             </Reveal>
@@ -102,7 +101,7 @@ export default function HomePage() {
           {/* Hero Ring & Rating Note — Perfectly anchored near the bottom edge without a huge empty gap */}
           <Reveal delay={0.3} className="relative z-10 w-full pb-3 sm:pb-4 flex flex-col items-center overflow-visible pointer-events-none">
             <HeroRing translateY={-32} rotateX={0} />
-            <p className="mt-5 text-center text-xs text-white font-semibold tracking-wide drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)] flex items-center justify-center gap-1.5">
+            <p className="mt-5 text-center text-xs text-white font-semibold tracking-wide flex items-center justify-center gap-1.5">
               <span>Over 4.8 GW Deployed Globally</span>
               <span className="inline-flex items-center gap-0.5 text-lime drop-shadow-none">
                 {[...Array(5)].map((_, i) => (

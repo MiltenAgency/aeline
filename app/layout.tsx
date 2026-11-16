@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Roboto_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { AgentationProvider } from "@/components/AgentationProvider";
 import { site } from "@/lib/content/site";
 import "./globals.css";
 
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <AgentationProvider />
       </body>
     </html>
   );
