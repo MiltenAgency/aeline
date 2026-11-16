@@ -15,8 +15,8 @@ export function HeroRing({
   radius = 490,
   rotateX = 0,
   translateY = 0,
-  cardWidth = 120,
-  cardHeight = 120,
+  cardWidth = 110,
+  cardHeight = 110,
 }: HeroRingProps) {
   const slots = [...cards, ...cards, ...cards];
   const n = slots.length;
@@ -30,6 +30,30 @@ export function HeroRing({
         }
         .animate-ring-spin {
           animation: ring-spin-motion 45s linear infinite;
+        }
+        .ring-card {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+        }
+        .ring-card > * {
+          box-shadow: none;
+          padding: 8px;
+        }
+        .ring-card p,
+        .ring-card span {
+          white-space: nowrap;
+        }
+        .ring-card [class~="text-[17px]"] {
+          font-size: 13px;
+        }
+        .ring-card [class~="text-[8.5px]"] {
+          font-size: 7px;
+        }
+        .ring-card [class~="text-[8px]"] {
+          font-size: 7px;
+        }
+        .ring-card svg {
+          width: 10px;
+          height: 10px;
         }
       `}</style>
 
@@ -45,7 +69,7 @@ export function HeroRing({
           {slots.map((Card, i) => (
             <div
               key={i}
-              className="absolute left-0 top-0 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.32)] overflow-hidden pointer-events-auto"
+              className="ring-card absolute left-0 top-0 overflow-hidden rounded-xl pointer-events-auto"
               style={{
                 width: `${cardWidth}px`,
                 height: `${cardHeight}px`,

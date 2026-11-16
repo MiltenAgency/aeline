@@ -8,7 +8,6 @@ import {
   Magnetic,
   SpotlightCard,
   TiltCard,
-  BorderBeam,
   SlideReveal,
   LogoMarquee,
   HeroRing,
@@ -28,7 +27,7 @@ const expertise = [
   {
     title: "18.5 MW Offshore Platforms",
     body: "Next-generation direct-drive offshore wind turbine platforms optimized for shallow monopiles and deepwater floating hulls.",
-    images: ["/assets/img/light/hero-daylight.jpg", "/assets/img/light/turbines-arc.jpg"],
+    images: ["/assets/img/light/hero-daylight.jpg"],
   },
   {
     title: "Carbon Aeroelastic Blades",
@@ -43,14 +42,14 @@ const expertise = [
   {
     title: "Marine Installation & EPC",
     body: "Turnkey marine logistics, dynamic position vessel operations, and 24/7 offshore array telemetry supervision.",
-    images: ["/assets/img/light/clean-horizon.jpg", "/assets/img/light/bright-ocean.jpg"],
+    images: ["/assets/img/offshore/cta-bg.jpg"],
   },
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section className="p-3 h-screen max-h-screen overflow-hidden flex flex-col">
+      <section className="h-svh max-h-svh overflow-hidden p-3 flex flex-col">
         <div className="relative flex-1 rounded-panel overflow-visible flex flex-col justify-between">
           {/* Background image — Bright 4K Wind Turbines, Green Rolling Hills & Azure Sky */}
           <div className="absolute inset-0 overflow-hidden rounded-panel bg-[#0077b6]">
@@ -100,7 +99,7 @@ export default function HomePage() {
 
           {/* Hero Ring & Rating Note — Perfectly anchored near the bottom edge without a huge empty gap */}
           <Reveal delay={0.3} className="relative z-10 w-full pb-3 sm:pb-4 flex flex-col items-center overflow-visible pointer-events-none">
-            <HeroRing translateY={-32} rotateX={0} />
+            <HeroRing translateY={60} rotateX={10} />
             <p className="mt-5 text-center text-xs text-white font-semibold tracking-wide flex items-center justify-center gap-1.5">
               <span>Over 4.8 GW Deployed Globally</span>
               <span className="inline-flex items-center gap-0.5 text-lime drop-shadow-none">
@@ -147,7 +146,7 @@ export default function HomePage() {
             <TiltCard className="h-full">
               <SpotlightCard className="h-full rounded-card">
                 <div className="relative flex h-full min-h-[340px] flex-col justify-between overflow-hidden rounded-card p-6">
-                  <Image src="/assets/img/light/turbines-arc.jpg" alt="Offshore Wind Array in Daylight" fill sizes="320px" className="object-cover" />
+                  <Image src="/assets/img/light/hero-daylight.jpg" alt="Offshore wind turbines across the sea" fill sizes="320px" className="object-cover" />
                   <div className="relative z-10 flex items-center justify-between">
                     <span className="font-mono text-xs font-semibold uppercase tracking-wider text-white">FLEET CAPACITY</span>
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-white">
@@ -156,11 +155,11 @@ export default function HomePage() {
                       </svg>
                     </span>
                   </div>
-                  <div className="relative z-10 rounded-2xl bg-white p-5 shadow-lg">
-                    <p className="font-sans text-3xl font-medium tracking-[-0.04em] text-ink">
+                  <div className="relative z-10 rounded-2xl bg-lime p-5 shadow-lg">
+                    <p className="font-sans text-3xl font-medium tracking-[-0.04em] text-white">
                       <Counter to={120} suffix="+" />
                     </p>
-                    <p className="mt-1 text-xs text-fog">Offshore turbine platforms commissioned across North Sea & Atlantic arrays.</p>
+                    <p className="mt-1 text-xs text-white/85">Offshore turbine platforms commissioned across North Sea & Atlantic arrays.</p>
                   </div>
                 </div>
               </SpotlightCard>
@@ -202,13 +201,12 @@ export default function HomePage() {
             </TiltCard>
           </SlideReveal>
 
-          {/* Cards 3 & 4 — stacked vertically in the third column */}
+          {/* Card 3 — Power Generated */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
-            {/* Card 3 — Power Generated (lime) — on top */}
             <SlideReveal direction="right" delay={0.24} className="flex-1">
               <TiltCard className="h-full">
                 <SpotlightCard className="h-full rounded-card bg-lime text-white">
-                  <div className="flex h-full min-h-[160px] flex-col justify-between p-6">
+                  <div className="flex h-full min-h-[340px] flex-col justify-between p-6">
                     <span className="font-mono text-xs font-semibold uppercase tracking-wider text-white/80">
                       Clean Energy Output
                     </span>
@@ -217,44 +215,6 @@ export default function HomePage() {
                         <Counter to={48} suffix=".5 GW" />
                       </p>
                       <p className="mt-2 text-xs text-white/80">Lifetime kinetic wind power delivered directly into utility grids.</p>
-                    </div>
-                  </div>
-                </SpotlightCard>
-              </TiltCard>
-            </SlideReveal>
-
-            {/* Card 4 — Maritime Basins (dark) — below */}
-            <SlideReveal direction="right" delay={0.32} className="flex-1">
-              <TiltCard className="h-full">
-                <SpotlightCard className="h-full rounded-card bg-ink text-white">
-                  <BorderBeam colorFrom="#34d399" colorTo="#10b981" duration={8} />
-                  <div className="flex h-full min-h-[160px] flex-col justify-between p-6">
-                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-white/70">
-                      Deepwater Basins
-                    </span>
-                    <div className="flex items-center justify-between">
-                      <div className="flex -space-x-2">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-xs border border-white/20 text-emerald-400">
-                          <svg className="h-3.5 w-3.5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M2 12c3-3 6-3 10 0s7 3 10 0M2 17c3-3 6-3 10 0s7 3 10 0" />
-                          </svg>
-                        </span>
-                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-xs border border-white/20 text-sky-400">
-                          <svg className="h-3.5 w-3.5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="5" r="3" />
-                            <line x1="12" y1="22" x2="12" y2="8" />
-                            <path d="M5 12H2a10 10 0 0 0 20 0h-3" />
-                          </svg>
-                        </span>
-                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-xs border border-white/20 text-lime">
-                          <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-                            <path d="M13 2L3 14h8l-1 8 11-13h-8l1-7z" />
-                          </svg>
-                        </span>
-                      </div>
-                      <p className="font-sans text-4xl font-medium tracking-[-0.04em] text-white sm:text-5xl">
-                        <Counter to={16} suffix="+" />
-                      </p>
                     </div>
                   </div>
                 </SpotlightCard>
@@ -289,29 +249,53 @@ export default function HomePage() {
           title="Where Marine Hydrodynamics Meets Aerodynamic Precision"
           sub="We design structural systems that survive 100-year marine storms while capturing maximum kinetic energy from every ocean gust."
         />
-        <div className="mt-12 grid gap-5 rounded-panel bg-mist p-5 sm:grid-cols-2">
-          {expertise.map((e, i) => (
-            <Reveal key={e.title} delay={i * 0.08} className="h-full">
-              <SpotlightCard className="h-full rounded-card bg-paper">
-                <div className="flex h-full flex-col p-6">
-                  <div className="flex aspect-[16/9] items-center justify-center gap-4 overflow-hidden rounded-xl bg-mist px-6">
-                    {e.images.map((src) => (
-                      <Image
-                        key={src}
-                        src={src}
-                        alt=""
-                        width={280}
-                        height={200}
-                        className="h-auto max-h-[80%] w-auto max-w-[45%] object-cover rounded-lg"
-                      />
-                    ))}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:auto-rows-[220px] lg:grid-cols-6">
+          {expertise.map((e, i) => {
+            const layout =
+              i === 0
+                ? "lg:col-span-4 lg:row-span-2"
+                : i === 3
+                  ? "lg:col-span-6"
+                  : "lg:col-span-2";
+
+            return (
+              <Reveal key={e.title} delay={i * 0.08} className={`h-full ${layout}`}>
+                <SpotlightCard className="group h-full rounded-card bg-ink">
+                  <div className="group relative flex h-full min-h-[280px] flex-col justify-end overflow-hidden rounded-card lg:min-h-0">
+                    <div className="absolute inset-0 flex">
+                      {e.images.map((src) => (
+                        <div
+                          key={src}
+                          className={`relative h-full ${e.images.length > 1 ? "w-1/2" : "w-full"}`}
+                        >
+                          <Image
+                            src={src}
+                            alt=""
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 60vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-t ${
+                        i === 3
+                          ? "from-orange-950/90 via-orange-600/20"
+                          : "from-ink/70 via-ink/10"
+                      } to-transparent`}
+                    />
+                    <div className="relative z-10 p-6">
+                      <h3 className="font-sans text-xl font-semibold tracking-[-0.04em] text-white sm:text-2xl">
+                        {e.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-white/85">{e.body}</p>
+                    </div>
                   </div>
-                  <h3 className="mt-6 text-center font-sans text-2xl font-medium tracking-[-0.04em]">{e.title}</h3>
-                  <p className="mt-2 text-center text-sm leading-relaxed text-fog">{e.body}</p>
-                </div>
-              </SpotlightCard>
-            </Reveal>
-          ))}
+                </SpotlightCard>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
