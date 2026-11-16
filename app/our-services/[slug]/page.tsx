@@ -65,7 +65,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             </Reveal>
           ))}
           <Reveal className="h-full">
-            <figure className="flex h-full flex-col justify-between gap-6 rounded-card bg-lime p-7">
+            <figure className="flex h-full flex-col justify-between gap-6 rounded-card bg-lime p-7 text-white">
               <blockquote className="font-sans text-2xl font-medium tracking-[-0.04em] leading-snug">
                 “{service.quote.text}”
               </blockquote>
@@ -79,7 +79,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                 />
                 <div>
                   <p className="text-sm font-semibold">{service.quote.author}</p>
-                  <p className="text-xs text-ink/60">{service.quote.company}</p>
+                  <p className="text-xs text-white/75">{service.quote.company}</p>
                 </div>
               </figcaption>
             </figure>

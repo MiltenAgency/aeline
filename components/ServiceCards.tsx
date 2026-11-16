@@ -62,7 +62,7 @@ export function ServiceCards() {
             }}
             onMouseEnter={() => setActiveIndex(index)}
             onClick={() => setActiveIndex(index)}
-            className={`group relative flex flex-col justify-between overflow-hidden rounded-card bg-paper p-8 shadow-sm transition-all duration-300 hover:shadow-md min-h-[380px] cursor-pointer ${
+            className={`group relative flex flex-col justify-between overflow-hidden rounded-card bg-paper p-8 shadow-sm transition-all duration-300 hover:shadow-md min-h-[380px] cursor-pointer lg:h-[420px] lg:min-h-0 ${
               isActive ? "lg:flex-[2.2]" : "lg:flex-1"
             }`}
           >
