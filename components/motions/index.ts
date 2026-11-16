@@ -1,7 +1,6 @@
 // ─── Core Reveal Primitives ───────────────────────────────────────────────────
 export { Reveal } from "./Reveal";
 export { SlideReveal } from "./SlideReveal";
-export { TextMaskReveal } from "./TextMaskReveal";
 
 // ─── Text Effects ─────────────────────────────────────────────────────────────
 export { WordByWordBlur } from "./WordByWordBlur";
@@ -30,26 +29,17 @@ export { WobbleCard } from "./WobbleCard";
 export { PinContainer } from "./PinContainer";
 export { Lens } from "./Lens";
 
-// ─── Scroll & Parallax ────────────────────────────────────────────────────────
-export { ParallaxScroll } from "./ParallaxScroll";
-export { StickyScroll } from "./StickyScroll";
-export { TracingBeam } from "./TracingBeam";
-export { ScrollProgress } from "./ScrollProgress";
-
 // ─── Sliders, Marquees & Beams ────────────────────────────────────────────────
 export { Carousel } from "./Carousel";
 export { LogoMarquee } from "./LogoMarquee";
-export { InfiniteSlider } from "./InfiniteSlider";
 export { Marquee3D } from "./Marquee3D";
 export { AnimatedBeam } from "./AnimatedBeam";
 
 // ─── Lists & UI Components ────────────────────────────────────────────────────
-export { StaggeredList } from "./StaggeredList";
 export { Dock } from "./Dock";
 export { AnimatedTabs } from "./AnimatedTabs";
 export { AnimatedTooltip } from "./AnimatedTooltip";
 export { HoverBorderGradient } from "./HoverBorderGradient";
-export { AnimatedSubscribeButton } from "./AnimatedSubscribeButton";
 export { ShimmerButton } from "./ShimmerButton";
 
 // ─── Cursor & Interaction ─────────────────────────────────────────────────────
@@ -65,6 +55,4 @@ export { RetroGrid } from "./RetroGrid";
 export { Meteors } from "./Meteors";
 export { FlickeringGrid } from "./FlickeringGrid";
 export { Particles } from "./Particles";
-export { BackgroundBeams } from "./BackgroundBeams";
-export { Spotlight } from "./Spotlight";
 export { Confetti } from "./Confetti";
