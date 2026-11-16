@@ -107,7 +107,7 @@ export default function ScratchCard(props: ScratchCardProps) {
     });
     fire(0.2, {
       spread: 70,
-      colors: ["#ffffff", "#84cc16", "#06b6d4"],
+      colors: ["#ffffff", "#ff6a00", "#ffb366"],
     });
     fire(0.35, {
       spread: 110,

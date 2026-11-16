@@ -89,24 +89,24 @@ export function CounterCurtainPreloader({
         >
           <div className="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-white/50">
             <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#10b981] animate-pulse" />
+              <span className="h-2 w-2 rounded-full bg-[#ff6a00] animate-pulse" />
               {brandText}
             </span>
-            <span className="text-[#34d399]">OFFSHORE WIND • 18.5 MW</span>
+            <span className="text-[#ffb366]">OFFSHORE WIND • 18.5 MW</span>
           </div>
 
           <div className="my-auto text-center font-mono">
             <span className="text-8xl font-extrabold tracking-tighter sm:text-[11rem] text-white">
               {String(count).padStart(2, "0")}
             </span>
-            <span className="text-4xl sm:text-5xl text-[#10b981] font-bold ml-1">%</span>
+            <span className="text-4xl sm:text-5xl text-[#ff6a00] font-bold ml-1">%</span>
           </div>
 
           <div className="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-white/50">
             <span>INITIALIZING TURBINE ARRAYS</span>
             <div className="h-1.5 w-36 overflow-hidden rounded-full bg-white/10">
               <div
-                className="h-full bg-gradient-to-r from-[#059669] via-[#10b981] to-[#34d399] transition-all duration-75"
+                className="h-full bg-gradient-to-r from-[#c2410c] via-[#ff6a00] to-[#ffb366] transition-all duration-75"
                 style={{ width: `${count}%` }}
               />
             </div>

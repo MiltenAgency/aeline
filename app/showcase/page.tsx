@@ -118,7 +118,7 @@ export default function ShowcasePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d0e12] text-white selection:bg-lime selection:text-black font-sans pb-32">
+    <div className="min-h-screen bg-paper text-ink selection:bg-lime selection:text-white font-sans pb-32">
       {/* Confetti overlay */}
       <Confetti trigger={confettiActive} />
 
@@ -152,34 +152,34 @@ export default function ShowcasePage() {
       {/* Optional Cursor Follower Toggle */}
       {enableCursorFollow && (
         <FollowCursor size={36}>
-          <div className="w-3 h-3 rounded-full bg-lime shadow-[0_0_12px_#84cc16]" />
+          <div className="w-3 h-3 rounded-full bg-lime shadow-[0_0_12px_#ff6a00]" />
         </FollowCursor>
       )}
 
       {/* ── Header Bar ──────────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 bg-[#0d0e12] border-b border-white/10 px-6 py-4">
+      <header className="sticky top-0 z-50 bg-paper border-b border-line px-6 py-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <Link href="/" className="group flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-white/5 group-hover:bg-lime/20 border border-white/10 transition-colors">
+              <div className="p-2 rounded-xl bg-mist group-hover:bg-lime/10 border border-line transition-colors">
                 <Image
                   src="/assets/img/e71483bf6a2851df.svg"
                   alt="Aeline"
                   width={80}
                   height={24}
-                  className="brightness-0 invert"
+                  className="brightness-0"
                 />
               </div>
             </Link>
-            <div className="h-6 w-px bg-white/15" />
+            <div className="h-6 w-px bg-line" />
             <div>
               <h1 className="text-lg font-bold tracking-tight flex items-center gap-2">
                 Motion & Preloader Engine
-                <span className="text-[10px] font-mono font-bold uppercase tracking-widest bg-lime text-black px-2 py-0.5 rounded-full">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-widest bg-lime text-white px-2 py-0.5 rounded-full">
                   70 Components
                 </span>
               </h1>
-              <p className="text-xs text-white/50">
+              <p className="text-xs text-fog">
                 Interactive preview gallery for Aeline Framer design system
               </p>
             </div>
@@ -193,12 +193,12 @@ export default function ShowcasePage() {
                 placeholder="Search component..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-full px-4 py-2 text-xs font-mono text-white placeholder-white/40 focus:outline-none focus:border-lime transition"
+                className="w-full bg-paper border border-line rounded-full px-4 py-2 text-xs font-mono text-ink placeholder:text-fog/60 focus:outline-none focus:border-lime transition"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-fog hover:text-ink"
                 >
                   <svg className="h-3 w-3 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -212,8 +212,8 @@ export default function ShowcasePage() {
               onClick={() => setEnableCursorFollow((prev) => !prev)}
               className={`px-3 py-2 rounded-full text-xs font-mono font-semibold transition border ${
                 enableCursorFollow
-                  ? "bg-lime text-black border-lime"
-                  : "bg-white/5 text-white/70 border-white/10 hover:bg-white/10"
+                  ? "bg-lime text-white border-lime"
+                  : "bg-mist text-fog border-line hover:bg-white hover:text-ink"
               }`}
             >
               Cursor: {enableCursorFollow ? "ON" : "OFF"}
@@ -222,7 +222,7 @@ export default function ShowcasePage() {
         </div>
 
         {/* Category Navigation Tabs */}
-        <div className="max-w-7xl mx-auto mt-4 pt-3 border-t border-white/5 flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+        <div className="max-w-7xl mx-auto mt-4 pt-3 border-t border-line flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
           {[
             { id: "all", label: "All Components (70)" },
             { id: "preloaders", label: "Preloaders (16)" },
@@ -238,8 +238,8 @@ export default function ShowcasePage() {
               onClick={() => setActiveTab(tab.id)}
               className={`px-4 py-1.5 rounded-full text-xs font-mono font-medium whitespace-nowrap transition-all ${
                 activeTab === tab.id
-                  ? "bg-lime text-black shadow-[0_0_15px_#84cc16_40]"
-                  : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/5"
+                  ? "bg-lime text-white shadow-sm"
+                  : "bg-mist text-fog hover:bg-white hover:text-ink border border-line"
               }`}
             >
               {tab.label}
@@ -253,19 +253,19 @@ export default function ShowcasePage() {
         {/* SECTION 1: PRELOADERS (16 Versions) */}
         {(activeTab === "all" || activeTab === "preloaders") && (
           <section className="space-y-6">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+            <div className="flex items-center justify-between border-b border-line pb-4">
               <div>
                 <span className="font-mono text-xs text-lime font-bold uppercase tracking-widest">
                   01 // FULLSCREEN REVEAL ENGINE
                 </span>
-                <h2 className="text-2xl font-bold tracking-tight text-white mt-1">
+                <h2 className="text-2xl font-bold tracking-tight text-ink mt-1">
                   16 Interactive Preloader Versions
                 </h2>
-                <p className="text-xs text-white/50 mt-1">
+                <p className="text-xs text-fog mt-1">
                   Click &apos;Trigger Preloader&apos; on any card below to preview the live fullscreen entrance animation.
                 </p>
               </div>
-              <span className="hidden sm:inline-block font-mono text-xs text-white/40 border border-white/10 px-3 py-1 rounded-full">
+              <span className="hidden sm:inline-block font-mono text-xs text-fog border border-line px-3 py-1 rounded-full">
                 ESC to close preview
               </span>
             </div>
@@ -274,7 +274,7 @@ export default function ShowcasePage() {
               {PRELOADERS_LIST.filter((p) => matchesSearch(p.name) || matchesSearch(p.desc)).map((item) => (
                 <div
                   key={item.id}
-                  className="group relative bg-[#13151c] rounded-2xl p-5 border border-white/10 hover:border-lime/50 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+                  className="group relative bg-mist rounded-2xl p-5 border border-line hover:border-lime/50 transition-all duration-300 flex flex-col justify-between hover:shadow-md"
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
@@ -283,17 +283,17 @@ export default function ShowcasePage() {
                       </span>
                       <span className="w-2 h-2 rounded-full bg-lime/50 group-hover:bg-lime group-hover:animate-ping" />
                     </div>
-                    <h3 className="text-base font-bold text-white group-hover:text-lime transition-colors">
+                    <h3 className="text-base font-bold text-ink group-hover:text-lime transition-colors">
                       {item.name}
                     </h3>
-                    <p className="text-xs text-white/50 leading-relaxed">
+                    <p className="text-xs text-fog leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
 
                   <button
                     onClick={() => setActivePreloaderId(item.id)}
-                    className="mt-5 w-full py-2.5 rounded-xl bg-white/5 group-hover:bg-lime group-hover:text-black text-white text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-2 border border-white/10 group-hover:border-lime"
+                    className="mt-5 w-full py-2.5 rounded-xl bg-white text-ink group-hover:bg-lime group-hover:text-white text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-2 border border-line group-hover:border-lime"
                   >
                     <span>▶ Trigger Preloader</span>
                   </button>
@@ -306,92 +306,92 @@ export default function ShowcasePage() {
         {/* SECTION 2: TEXT & TYPOGRAPHY MOTIONS */}
         {(activeTab === "all" || activeTab === "text") && (
           <section className="space-y-6">
-            <div className="border-b border-white/10 pb-4">
+            <div className="border-b border-line pb-4">
               <span className="font-mono text-xs text-lime font-bold uppercase tracking-widest">
                 02 // KINETIC TYPOGRAPHY & TEXT FX
               </span>
-              <h2 className="text-2xl font-bold tracking-tight text-white mt-1">
+              <h2 className="text-2xl font-bold tracking-tight text-ink mt-1">
                 Kinetic & Masked Text Effects
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Typewriter */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Typewriter</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 text-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Typewriter</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 text-center">
                   <Typewriter words={["Automating strategy with custom AI engines.", "Engineered for rapid scale."]} speed={50} />
                 </div>
               </div>
 
               {/* Text Scramble */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Text Scramble</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 text-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Text Scramble</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 text-center">
                   <TextScramble text="STRATEGIC INNOVATION" />
                 </div>
               </div>
 
               {/* Glitch Text */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Glitch Text</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 text-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Glitch Text</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 text-center">
                   <GlitchText text="AELINE AI MATRIX" />
                 </div>
               </div>
 
               {/* Morphing Text */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Morphing Text</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 text-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Morphing Text</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 text-center">
                   <MorphingText texts={["Strategy", "Consulting", "Artificial", "Intelligence"]} />
                 </div>
               </div>
 
               {/* Spinning Text */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Spinning Circular Text</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-2 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Spinning Circular Text</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-2 border border-white/5">
                   <SpinningText text="• AELINE • AI CONSULTING " radius={35} />
                 </div>
               </div>
 
               {/* Flip Text */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">3D Flip Text</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 text-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">3D Flip Text</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 text-center">
                   <FlipText words={["Design", "Transform", "Innovate", "Elevate"]} />
                 </div>
               </div>
 
               {/* Gradient Text */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Animated Gradient Text</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 text-center text-xl font-extrabold">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Animated Gradient Text</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 text-center text-xl font-extrabold">
                   <GradientText>Luminous Strategic Future</GradientText>
                 </div>
               </div>
 
               {/* Shiny Text */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Shiny Metallic Text</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 text-center text-xl font-bold">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Shiny Metallic Text</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 text-center text-xl font-bold">
                   <ShinyText text="AELINE PREMIUM PLATFORM" />
                 </div>
               </div>
 
               {/* Letter Pull Up */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Letter Pull Up</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 text-center text-lg font-bold text-lime">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Letter Pull Up</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 text-center text-lg font-bold text-lime">
                   <LetterPullUp text="PRECISION EXECUTION" />
                 </div>
               </div>
 
               {/* Scroll Text Reveal */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4 col-span-1 md:col-span-2">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Scroll Text Reveal</span>
-                <div className="h-20 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 text-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4 col-span-1 md:col-span-2">
+                <span className="font-mono text-[10px] text-fog uppercase">Scroll Text Reveal</span>
+                <div className="h-20 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 text-center">
                   <ScrollTextReveal text="Highlights text gracefully as user scrolls down the page." />
                 </div>
               </div>
@@ -402,33 +402,33 @@ export default function ShowcasePage() {
         {/* SECTION 3: CARDS & 3D CONTAINERS */}
         {(activeTab === "all" || activeTab === "cards") && (
           <section className="space-y-6">
-            <div className="border-b border-white/10 pb-4">
+            <div className="border-b border-line pb-4">
               <span className="font-mono text-xs text-lime font-bold uppercase tracking-widest">
                 03 // 3D CARDS & INTERACTIVE CONTAINERS
               </span>
-              <h2 className="text-2xl font-bold tracking-tight text-white mt-1">
+              <h2 className="text-2xl font-bold tracking-tight text-ink mt-1">
                 Cards, Lens & Interactive Containers
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Gold Scratch Card */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4 col-span-1 md:col-span-2">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4 col-span-1 md:col-span-2">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[10px] text-lime uppercase font-bold">
                     Interactive Gold Scratch Card (Canvas & Reveal)
                   </span>
-                  <span className="text-xs text-white/50">Scratch with mouse or finger to reveal reward</span>
+                  <span className="text-xs text-fog">Scratch with mouse or finger to reveal reward</span>
                 </div>
-                <div className="h-64 w-full flex items-center justify-center bg-black/60 rounded-xl p-2 border border-white/10">
+                <div className="h-64 w-full flex items-center justify-center bg-black/60 text-white rounded-xl p-2 border border-white/10">
                   <ScratchCard topText="Scratch to Reveal Promo" />
                 </div>
               </div>
 
               {/* Card Stack */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Rotating Card Stack</span>
-                <div className="h-64 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 overflow-hidden">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Rotating Card Stack</span>
+                <div className="h-64 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 overflow-hidden">
                   <CardStack
                     items={[
                       { id: 1, name: "Sarah Chen", designation: "AI Architect", content: "Aeline doubled our operational speed." },
@@ -440,9 +440,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* Tilt Card */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">3D Inertia Tilt Card</span>
-                <div className="h-56 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">3D Inertia Tilt Card</span>
+                <div className="h-56 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <TiltCard className="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 border border-white/10 flex flex-col justify-between">
                     <span className="text-lime text-xs font-mono">HOVER ME</span>
                     <div>
@@ -454,9 +454,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* Spotlight Card */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Spotlight Mouse Card</span>
-                <div className="h-56 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Spotlight Mouse Card</span>
+                <div className="h-56 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <SpotlightCard className="w-full h-full bg-zinc-900 rounded-xl p-6 border border-white/10 flex flex-col justify-between">
                     <span className="text-sky-400 text-xs font-mono">SPOTLIGHT</span>
                     <div>
@@ -468,11 +468,11 @@ export default function ShowcasePage() {
               </div>
 
               {/* Border Beam */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Animated Border Beam</span>
-                <div className="h-56 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 relative overflow-hidden">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Animated Border Beam</span>
+                <div className="h-56 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 relative overflow-hidden">
                   <div className="relative w-full h-full bg-zinc-900 rounded-xl p-6 border border-white/10 flex flex-col justify-between">
-                    <BorderBeam size={150} duration={8} delay={0} colorFrom="#84cc16" colorTo="#06b6d4" />
+                    <BorderBeam size={150} duration={8} delay={0} colorFrom="#ff6a00" colorTo="#ffb366" />
                     <span className="text-lime text-xs font-mono">LASER BEAM</span>
                     <div>
                       <h4 className="text-lg font-bold text-white">Infinite Border Tracer</h4>
@@ -483,9 +483,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* Wobble Card */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">3D Wobble Card</span>
-                <div className="h-56 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">3D Wobble Card</span>
+                <div className="h-56 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <WobbleCard className="w-full h-full bg-gradient-to-tr from-purple-900/60 to-zinc-900 rounded-xl p-6 border border-purple-500/20">
                     <h4 className="text-lg font-bold text-white">Spring Wobble</h4>
                     <p className="text-xs text-white/50 mt-1">Elastic spring distortion on mouse enter</p>
@@ -494,9 +494,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* Pin Container */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">3D Pin Container</span>
-                <div className="h-56 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">3D Pin Container</span>
+                <div className="h-56 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <PinContainer title="visit aeline.com">
                     <div className="flex flex-col p-4 tracking-tight text-[#121212] w-56 h-32 bg-[#121212] border border-white/10 rounded-xl">
                       <span className="text-white text-sm font-bold">Strategic AI</span>
@@ -507,9 +507,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* Lens Magnifier */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Lens Magnifier</span>
-                <div className="h-56 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5 overflow-hidden">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Lens Magnifier</span>
+                <div className="h-56 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5 overflow-hidden">
                   <Lens zoomFactor={1.8} lensSize={120}>
                     <div className="p-6 bg-gradient-to-r from-lime/20 via-sky-500/20 to-purple-500/20 rounded-xl text-center border border-white/10">
                       <span className="text-xs font-mono text-lime">HOVER TO MAGNIFY</span>
@@ -525,20 +525,20 @@ export default function ShowcasePage() {
         {/* SECTION 4: COUNTERS & MATH */}
         {(activeTab === "all" || activeTab === "counters") && (
           <section className="space-y-6">
-            <div className="border-b border-white/10 pb-4">
+            <div className="border-b border-line pb-4">
               <span className="font-mono text-xs text-lime font-bold uppercase tracking-widest">
                 04 // NUMERICAL TICKERS & METRICS
               </span>
-              <h2 className="text-2xl font-bold tracking-tight text-white mt-1">
+              <h2 className="text-2xl font-bold tracking-tight text-ink mt-1">
                 Animated Counters & Number Tickers
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Counter */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Spring Counter</span>
-                <div className="h-32 flex flex-col items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Spring Counter</span>
+                <div className="h-32 flex flex-col items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <span className="text-4xl font-extrabold text-lime font-mono">
                     <Counter to={5000000} prefix="$" duration={2.5} />
                   </span>
@@ -547,9 +547,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* Number Ticker */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Number Ticker</span>
-                <div className="h-32 flex flex-col items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Number Ticker</span>
+                <div className="h-32 flex flex-col items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <span className="text-4xl font-extrabold text-white font-mono">
                     <NumberTicker value={99} />.8%
                   </span>
@@ -558,9 +558,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* Motion Number */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Motion Number</span>
-                <div className="h-32 flex flex-col items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Motion Number</span>
+                <div className="h-32 flex flex-col items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <span className="text-4xl font-extrabold text-sky-400 font-mono">
                     <MotionNumber value={4200} />+
                   </span>
@@ -574,23 +574,23 @@ export default function ShowcasePage() {
         {/* SECTION 5: UI & INTERACTIVE CONTROLS */}
         {(activeTab === "all" || activeTab === "controls") && (
           <section className="space-y-6">
-            <div className="border-b border-white/10 pb-4">
+            <div className="border-b border-line pb-4">
               <span className="font-mono text-xs text-lime font-bold uppercase tracking-widest">
                 05 // INTERACTIVE UI & CONTROLS
               </span>
-              <h2 className="text-2xl font-bold tracking-tight text-white mt-1">
+              <h2 className="text-2xl font-bold tracking-tight text-ink mt-1">
                 Buttons, Tooltips, Tabs & Confetti
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Confetti Trigger */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Canvas Confetti Cannon</span>
-                <div className="h-32 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Canvas Confetti Cannon</span>
+                <div className="h-32 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <button
                     onClick={triggerConfetti}
-                    className="px-6 py-2.5 rounded-full bg-lime text-black font-mono font-bold text-xs hover:scale-105 active:scale-95 transition"
+                    className="px-6 py-2.5 rounded-full bg-lime text-white font-mono font-bold text-xs hover:scale-105 active:scale-95 transition"
                   >
                     Fire Confetti Burst
                   </button>
@@ -598,9 +598,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* Shimmer Button */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Shimmer Laser Button</span>
-                <div className="h-32 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Shimmer Laser Button</span>
+                <div className="h-32 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <ShimmerButton className="shadow-2xl">
                     <span className="whitespace-pre-wrap text-center text-sm font-medium tracking-widest text-white">
                       SHIMMER BUTTON
@@ -610,9 +610,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* Hover Border Gradient */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Hover Border Gradient</span>
-                <div className="h-32 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Hover Border Gradient</span>
+                <div className="h-32 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <HoverBorderGradient containerClassName="rounded-full" className="bg-black text-white px-6 py-2">
                     <span>Gradient Border</span>
                   </HoverBorderGradient>
@@ -620,17 +620,17 @@ export default function ShowcasePage() {
               </div>
 
               {/* Animated Tabs */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Animated Pill Tabs</span>
-                <div className="h-32 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Animated Pill Tabs</span>
+                <div className="h-32 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <AnimatedTabs tabs={["Overview", "Features", "Pricing"]} />
                 </div>
               </div>
 
               {/* Animated Tooltip */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Avatar Animated Tooltip</span>
-                <div className="h-32 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Avatar Animated Tooltip</span>
+                <div className="h-32 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <AnimatedTooltip
                     items={[
                       { id: 1, name: "Alex Chen", designation: "AI Architect", image: "/assets/img/b1cfccfca49b66c1.webp" },
@@ -642,9 +642,9 @@ export default function ShowcasePage() {
               </div>
 
               {/* macOS Dock */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">macOS Spring Dock</span>
-                <div className="h-32 flex items-center justify-center bg-black/40 rounded-xl p-4 border border-white/5">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">macOS Spring Dock</span>
+                <div className="h-32 flex items-center justify-center bg-black/40 text-white rounded-xl p-4 border border-white/5">
                   <Dock
                     items={[
                       { icon: "Z", label: "Zephyr" },
@@ -662,20 +662,20 @@ export default function ShowcasePage() {
         {/* SECTION 6: SLIDERS & MARQUEES */}
         {(activeTab === "all" || activeTab === "sliders") && (
           <section className="space-y-6">
-            <div className="border-b border-white/10 pb-4">
+            <div className="border-b border-line pb-4">
               <span className="font-mono text-xs text-lime font-bold uppercase tracking-widest">
                 06 // SLIDERS, MARQUEES & BEAMS
               </span>
-              <h2 className="text-2xl font-bold tracking-tight text-white mt-1">
+              <h2 className="text-2xl font-bold tracking-tight text-ink mt-1">
                 Infinite Sliders, 3D Marquees & Beams
               </h2>
             </div>
 
             <div className="space-y-6">
               {/* 3D Marquee */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">3D Tilted Marquee</span>
-                <div className="h-44 bg-black/60 rounded-xl border border-white/5 overflow-hidden flex items-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">3D Tilted Marquee</span>
+                <div className="h-44 bg-black/60 text-white rounded-xl border border-white/5 overflow-hidden flex items-center">
                   <Marquee3D
                     rows={[
                       [
@@ -694,21 +694,21 @@ export default function ShowcasePage() {
               </div>
 
               {/* Logo Marquee */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Continuous Logo Marquee</span>
-                <div className="h-28 bg-black/40 rounded-xl border border-white/5 overflow-hidden flex items-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Continuous Logo Marquee</span>
+                <div className="h-28 bg-black/40 text-white rounded-xl border border-white/5 overflow-hidden flex items-center">
                   <LogoMarquee />
                 </div>
               </div>
 
               {/* Animated Beam */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">SVG Animated Connection Beam</span>
-                <div className="relative h-32 bg-black/60 rounded-xl border border-white/5 flex items-center justify-between px-12 overflow-hidden">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">SVG Animated Connection Beam</span>
+                <div className="relative h-32 bg-black/60 text-white rounded-xl border border-white/5 flex items-center justify-between px-12 overflow-hidden">
                   <div className="w-12 h-12 rounded-full bg-lime/20 border border-lime text-lime flex items-center justify-center font-mono font-bold text-xs">
                     SRC
                   </div>
-                  <AnimatedBeam delay={0} duration={3} gradientStartColor="#84cc16" gradientStopColor="#06b6d4" />
+                  <AnimatedBeam delay={0} duration={3} gradientStartColor="#ff6a00" gradientStopColor="#ffb366" />
                   <div className="w-12 h-12 rounded-full bg-sky-500/20 border border-sky-400 text-sky-400 flex items-center justify-center font-mono font-bold text-xs">
                     DEST
                   </div>
@@ -721,90 +721,90 @@ export default function ShowcasePage() {
         {/* SECTION 7: BACKGROUNDS & CANVAS FX */}
         {(activeTab === "all" || activeTab === "backgrounds") && (
           <section className="space-y-6">
-            <div className="border-b border-white/10 pb-4">
+            <div className="border-b border-line pb-4">
               <span className="font-mono text-xs text-lime font-bold uppercase tracking-widest">
                 07 // CANVAS, PARTICLES & BACKGROUND FX
               </span>
-              <h2 className="text-2xl font-bold tracking-tight text-white mt-1">
+              <h2 className="text-2xl font-bold tracking-tight text-ink mt-1">
                 Background Shaders, Particles & 3D Ring
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Hero 3D Ring */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4 overflow-hidden col-span-1 md:col-span-2">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4 overflow-hidden col-span-1 md:col-span-2">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[10px] text-lime uppercase font-bold">
                     Hero 3D Rotating Ring of Coded Cards
                   </span>
-                  <span className="text-xs text-white/50">Used in main landing page hero section</span>
+                  <span className="text-xs text-fog">Used in main landing page hero section</span>
                 </div>
-                <div className="h-72 bg-black/80 rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center">
+                <div className="h-72 bg-black/80 text-white rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center">
                   <HeroRing />
                 </div>
               </div>
 
               {/* Flickering Grid */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Canvas Flickering Grid</span>
-                <div className="relative h-64 bg-black rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
-                  <FlickeringGrid squareSize={4} gridGap={6} color="#84cc16" flickerChance={0.1} />
-                  <span className="relative z-10 font-mono text-xs text-lime bg-black/80 border border-lime/40 px-3 py-1 rounded-full">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Canvas Flickering Grid</span>
+                <div className="relative h-64 bg-black text-white rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
+                  <FlickeringGrid squareSize={4} gridGap={6} color="#ff6a00" flickerChance={0.1} />
+                  <span className="relative z-10 font-mono text-xs text-lime bg-black/80 text-white border border-lime/40 px-3 py-1 rounded-full">
                     FLICKERING MATRIX
                   </span>
                 </div>
               </div>
 
               {/* Retro Grid */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">3D Retro Perspective Grid</span>
-                <div className="relative h-64 bg-black rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">3D Retro Perspective Grid</span>
+                <div className="relative h-64 bg-black text-white rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
                   <RetroGrid />
-                  <span className="relative z-10 font-mono text-xs text-white bg-black/80 border border-white/20 px-3 py-1 rounded-full">
+                  <span className="relative z-10 font-mono text-xs text-white bg-black/80 text-white border border-white/20 px-3 py-1 rounded-full">
                     RETRO PERSPECTIVE
                   </span>
                 </div>
               </div>
 
               {/* Particles */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Interactive Physics Particles</span>
-                <div className="relative h-64 bg-black rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Interactive Physics Particles</span>
+                <div className="relative h-64 bg-black text-white rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
                   <Particles quantity={60} color="#ffffff" />
-                  <span className="relative z-10 font-mono text-xs text-sky-400 bg-black/80 border border-sky-400/40 px-3 py-1 rounded-full">
+                  <span className="relative z-10 font-mono text-xs text-sky-400 bg-black/80 text-white border border-sky-400/40 px-3 py-1 rounded-full">
                     PARTICLE DUST
                   </span>
                 </div>
               </div>
 
               {/* Ripple */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Radar Concentric Ripple</span>
-                <div className="relative h-64 bg-black rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
-                  <Ripple count={5} size={140} color="rgba(132,204,22,0.2)" />
-                  <span className="relative z-10 font-mono text-xs text-lime bg-black/80 border border-lime/40 px-3 py-1 rounded-full">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Radar Concentric Ripple</span>
+                <div className="relative h-64 bg-black text-white rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
+                  <Ripple count={5} size={140} color="rgba(255,106,0,0.2)" />
+                  <span className="relative z-10 font-mono text-xs text-lime bg-black/80 text-white border border-lime/40 px-3 py-1 rounded-full">
                     CONCENTRIC RIPPLE
                   </span>
                 </div>
               </div>
 
               {/* Meteors */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Falling Meteors Shower</span>
-                <div className="relative h-64 bg-black rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Falling Meteors Shower</span>
+                <div className="relative h-64 bg-black text-white rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
                   <Meteors number={25} />
-                  <span className="relative z-10 font-mono text-xs text-purple-400 bg-black/80 border border-purple-400/40 px-3 py-1 rounded-full">
+                  <span className="relative z-10 font-mono text-xs text-purple-400 bg-black/80 text-white border border-purple-400/40 px-3 py-1 rounded-full">
                     METEOR SHOWER
                   </span>
                 </div>
               </div>
 
               {/* Aurora Background */}
-              <div className="bg-[#13151c] rounded-2xl p-6 border border-white/10 space-y-4">
-                <span className="font-mono text-[10px] text-white/40 uppercase">Aurora Wave Shader</span>
-                <div className="relative h-64 bg-black rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
+              <div className="bg-mist rounded-2xl p-6 border border-line space-y-4">
+                <span className="font-mono text-[10px] text-fog uppercase">Aurora Wave Shader</span>
+                <div className="relative h-64 bg-black text-white rounded-xl border border-white/10 overflow-hidden flex items-center justify-center">
                   <AuroraBackground className="h-full w-full">
-                    <span className="font-mono text-xs text-white bg-black/80 border border-white/20 px-3 py-1 rounded-full">
+                    <span className="font-mono text-xs text-white bg-black/80 text-white border border-white/20 px-3 py-1 rounded-full">
                       AURORA WAVES
                     </span>
                   </AuroraBackground>
