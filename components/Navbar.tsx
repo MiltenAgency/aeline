@@ -11,26 +11,32 @@ import { Logo } from "@/components/Logo";
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const overlay = pathname === "/" || pathname === "/our-services";
+  const [scrolled, setScrolled] = useState(false);
+  const isHeroPage = pathname === "/" || pathname === "/our-services";
+  const overlay = isHeroPage && !scrolled && !open;
 
   useEffect(() => setOpen(false), [pathname]);
 
-  const linkColor =
-    overlay && !open
-      ? "text-white/80 hover:text-white"
-      : "text-ink/60 hover:text-ink";
+  useEffect(() => {
+    const updateScrolled = () => setScrolled(window.scrollY > 32);
+    updateScrolled();
+    window.addEventListener("scroll", updateScrolled, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrolled);
+  }, []);
+
+  const linkColor = overlay
+    ? "text-white/80 hover:text-white"
+    : "text-ink/60 hover:text-ink";
 
   return (
     <header
       className={`${
-        overlay ? "absolute" : "sticky top-0"
+        scrolled ? "fixed top-0" : isHeroPage ? "absolute" : "sticky top-0"
       } inset-x-0 z-50 px-4 pt-4 sm:px-8 sm:pt-5`}
     >
       <div
         className={`mx-auto flex max-w-[1440px] items-center justify-between rounded-2xl px-6 py-4 sm:px-10 sm:py-5 ${
-          overlay
-            ? ""
-            : "bg-paper border border-line/50 shadow-sm"
+          overlay ? "" : "border border-line/50 bg-paper shadow-sm"
         }`}
       >
         {/* Logo */}
@@ -39,11 +45,11 @@ export function Navbar() {
             <Logo className="w-full h-full" />
           </div>
           <span
-            className={`font-sans text-lg sm:text-xl font-extrabold tracking-tight transition-colors ${
-              overlay && !open ? "text-white" : "text-ink"
+            className={`font-sans text-lg font-extrabold tracking-tight transition-colors sm:text-xl ${
+              overlay ? "text-white" : "text-ink"
             }`}
           >
-            Zephyr<span className="text-[#10b981]">.</span>
+            Zephyr<span className="text-[#ff6a00]">.</span>
           </span>
         </Link>
 
@@ -86,18 +92,24 @@ export function Navbar() {
         >
           <span
             className={`h-0.5 w-6 rounded-full transition-all duration-300 ${
-              overlay && !open ? "bg-white" : "bg-ink"
-            } ${open ? "translate-y-[7px] rotate-45" : ""}`}
+              overlay ? "bg-white" : "bg-ink"
+            } ${
+              open ? "translate-y-[7px] rotate-45" : ""
+            }`}
           />
           <span
             className={`h-0.5 w-6 rounded-full transition-all duration-300 ${
-              overlay && !open ? "bg-white" : "bg-ink"
-            } ${open ? "opacity-0" : ""}`}
+              overlay ? "bg-white" : "bg-ink"
+            } ${
+              open ? "opacity-0" : ""
+            }`}
           />
           <span
             className={`h-0.5 w-6 rounded-full transition-all duration-300 ${
-              overlay && !open ? "bg-white" : "bg-ink"
-            } ${open ? "-translate-y-[7px] -rotate-45" : ""}`}
+              overlay ? "bg-white" : "bg-ink"
+            } ${
+              open ? "-translate-y-[7px] -rotate-45" : ""
+            }`}
           />
         </button>
       </div>
