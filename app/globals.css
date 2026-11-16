@@ -4,9 +4,9 @@
   --color-ink: #03071e;
   --color-ink-soft: #1e293b;
   --color-paper: #ffffff;
-  --color-mist: #f4f6fa;
-  --color-lime: #10b981;
-  --color-lime-deep: #059669;
+  --color-mist: #f8fafc;
+  --color-lime: #ff6a00;
+  --color-lime-deep: #c2410c;
   --color-fog: #64748b;
   --color-ink-60: rgb(3 7 30 / 0.6);
   --color-white-70: rgb(255 255 255 / 0.8);
@@ -62,6 +62,44 @@ h4 {
   to {
     transform: translateX(-50%);
   }
+}
+
+.hero-carousel-marquee {
+  animation: hero-carousel-scroll 30s linear infinite;
+}
+
+@keyframes hero-carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-carousel-card > * {
+  padding: 12px;
+}
+
+.hero-carousel-card [class~="text-[17px]"] {
+  font-size: 18px;
+}
+
+.hero-carousel-card [class~="text-[8.5px]"] {
+  font-size: 10px;
+}
+
+.hero-carousel-card [class~="text-[8px]"] {
+  font-size: 9px;
+}
+
+.hero-carousel-card [class~="text-[7px]"] {
+  font-size: 8px;
+}
+
+.hero-carousel-card svg {
+  width: 12px;
+  height: 12px;
 }
 
 ::selection {

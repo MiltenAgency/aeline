@@ -19,7 +19,7 @@ const geistMono = Roboto_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#10b981",
+  themeColor: "#ff6a00",
 };
 
 export const metadata: Metadata = {

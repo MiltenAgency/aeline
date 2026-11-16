@@ -9,7 +9,7 @@ interface LogoProps extends React.SVGProps<SVGSVGElement> {
 export function Logo({
   className = "",
   size = 36,
-  color = "#10b981",
+  color = "#ff6a00",
   ...props
 }: LogoProps) {
   return (
